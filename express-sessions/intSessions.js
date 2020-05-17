@@ -71,6 +71,8 @@ app.use(function(err, req, res, next){
   res.render('500');
 });
 
+req.session.destroy()
+
 app.listen(app.get('port'), function(){
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
