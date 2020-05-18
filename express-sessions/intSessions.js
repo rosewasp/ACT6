@@ -16,6 +16,7 @@ app.get('/',function(req,res,next){
   var context = {};
   //If there is no session, go to the main page.
   if(!req.session.name){
+    req.session.destroy()
     res.render('newSession', context);
     return;
   }
@@ -37,6 +38,7 @@ app.post('/',function(req,res){
 
   //If there is no session, go to the main page.
   if(!req.session.name){
+    req.session.destroy()
     res.render('newSession', context);
     return;
   }
