@@ -7,7 +7,7 @@ var request = require('request');
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 14988);
 app.use(express.static('public'));
 
 app.get('/',function(req,res){
