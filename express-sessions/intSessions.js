@@ -16,7 +16,6 @@ app.get('/',function(req,res,next){
   var context = {};
   //If there is no session, go to the main page.
   if(!req.session.name){
-    req.session.destroy()
     res.render('newSession', context);
     return;
   }
@@ -38,7 +37,6 @@ app.post('/',function(req,res){
 
   //If there is no session, go to the main page.
   if(!req.session.name){
-    req.session.destroy()
     res.render('newSession', context);
     return;
   }
@@ -53,6 +51,10 @@ app.post('/',function(req,res){
       return e.id != req.body.id;
     })
   }
+
+  if(req.body["End Session"]){
+    req.session.destroy();
+  };
 
   context.name = req.session.name;
   context.toDoCount = req.session.toDo.length;
