@@ -59,7 +59,6 @@ app.post('/',function(req,res){
   context.toDo = req.session.toDo;
   console.log(context.toDo);
   res.render('toDo',context);
-  req.session.destroy()
 });
 
 app.use(function(req,res){
