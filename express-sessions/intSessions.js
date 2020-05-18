@@ -59,8 +59,8 @@ app.post('/',function(req,res){
   res.render('toDo',context);
 
   if(req.body["End Session"]){
-    req.session.toDo = []
-    req.session.name = !req.session.name
+    req.session.toDo = [];
+    !req.session.name;
     req.session.destroy();
 
   if(!req.session.name){
