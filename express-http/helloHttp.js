@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
-var credentials = require('./credentials.js');
+var credentials = require('./credentials.js.template');
 var request = require('request');
 
 app.engine('handlebars', handlebars.engine);
